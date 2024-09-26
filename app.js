@@ -14,6 +14,7 @@ const init = async () => {
 // Handle file input change
 const fileInput = document.getElementById('fileInput');
 const fileInputLabel = document.querySelector('label[for="fileInput"]'); // Get the label for the file input
+const fileNameBox = document.getElementById('fileNameBox'); // Box to display file name
 
 fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
@@ -23,8 +24,11 @@ fileInput.addEventListener('change', (event) => {
         image.src = URL.createObjectURL(file);
         image.style.display = 'block'; // Show the image when loaded
 
-        // Change the label text to the selected file name
-        fileInputLabel.textContent = file.name;
+        // Change the label text to "Choose Another File"
+        fileInputLabel.textContent = "Choose Another File";
+
+        // Display the selected file name in the new box
+        fileNameBox.textContent = `Selected file: ${file.name}`;
 
         image.onload = () => {
             imageLoaded = true;
@@ -40,6 +44,8 @@ fileInput.addEventListener('change', (event) => {
     } else {
         console.error("No file selected");
         document.getElementById('detectButton').disabled = true; // Disable the detect button
+        fileNameBox.textContent = ""; // Clear the file name box if no file is selected
+        fileInputLabel.textContent = "Choose File"; // Reset the label text to default if no file is selected
     }
 });
 
