@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Detection</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <h1>Upload an Image for Object Detection</h1>
     <label for="fileInput" class="button">Choose File</label>
     <input type="file" id="fileInput" accept="image/*" class="hidden">
     <br>
+    <!-- Box to display the selected file name -->
+    <div id="fileNameBox" style="margin-top: 10px;"></div>
+    <br>
     <img id="image" src="" alt="Your Image will appear here" style="display: none;">
     <br>
     <button id="detectButton" class="button" disabled>Detect</button>
     <div id="result"></div>
+    
 
     <!-- Load TensorFlow.js and the COCO-SSD model from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@latest"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
