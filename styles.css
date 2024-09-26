@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
-    background-color: #f7f7f7;
+    background-color: #cae7f9;
     background-image: url('robotic.png');
     background-size: cover;
     background-position: center;
@@ -10,66 +10,93 @@ body {
     background-attachment: fixed;
 }
 
+.paytone-one-regular {
+    font-family: "Paytone One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#fileNameBox {
+    color: rgb(9, 143, 78); /* Set the color of the file name */
+    font-family: 'Brush Script MT', cursive;
+}
+
 h1 {
+    font-family: Paytone One;
     font-size: 36px;
-    background: linear-gradient(270deg, #00aaff, #0047ab, #00aaff);
+    background: linear-gradient(270deg, #00aaff, #b006f3, #00aaff);
     background-size: 300% 100%;
-    animation: moveGradient 10s ease-in-out infinite;
-    
+    animation: moveGradient 5s ease-in-out infinite;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+
+    /* Glass effect */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Adds blur behind the text */
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 #image {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
+    max-width: 50%; /* Limit the width to 50% of the parent element */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center the image with auto margins */
+    display: block; /* Make the image a block element to center it */
 }
+
 
 #result {
+    font-family: 'Brush Script MT', cursive;
     margin-top: 20px;
     font-size: 18px;
+    color:rgb(2, 143, 75)
 }
 
-.button {
+/* Button and Label button with smooth gradient animation */
+.button, label.button {
     padding: 10px 20px;
-    background-color: #2898a7;
+    background: linear-gradient(45deg, #00aaff, #056392, #2898a7); /* Gradient set to 45 degrees */    background-size: 300% 100%; /* 300% width for smooth transition */
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
+    display: inline-block;
+    border-radius: 20px;
+    animation: moveButtonGradient 5s ease-out infinite; /* Add animation */
 }
 
-.button:hover {
-    background-color: #1d80c6;
+/* Hover effect with glow and raise */
+.button:hover, label.button:hover {
+    background-color: none;
+    box-shadow: 0 8px 15px rgba(0, 170, 255, 0.6), 0 0 10px rgba(0, 170, 255, 0.4); /* Glowing effect */
+    transform: translateY(-5px); /* Raise the button a bit */
 }
 
+/* Disabled state for button */
 .button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
 
+/* Hide default file input */
 .hidden {
-    display: none; /* Hides the default file input */
+    display: none;
 }
 
-/* Style the label as a button */
-label.button {
-    padding: 10px 20px;
-    background-color: #2898a7;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-}
-
-label.button:hover {
-    background-color: #1d80c6;
+/* Keyframes for smooth gradient animation on button */
+@keyframes moveButtonGradient {
+    0% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0; /* Smoothly returns to starting point */
+    }
 }
 
 /* Keyframes for the smooth gradient animation on the heading */
