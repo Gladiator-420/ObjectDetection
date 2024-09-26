@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Upload an Image for Object Detection</h1>
+    <input type="file" id="fileInput" accept="image/*" class="button">
+    <br>
+    <img id="image" src="" alt="Your Image will appear here" style="display: none;">
+    <br>
+    <button id="detectButton" class="button" disabled>Detect</button>
+    <div id="result"></div>
+
+    <!-- Load TensorFlow.js and the COCO-SSD model from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>

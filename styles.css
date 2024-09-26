@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+    background-image: url('robotic.png');
+    background-size: cover; /* Ensures the background image covers the entire screen */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-attachment: fixed; /* Keeps the background in place while scrolling */
+}
+
+#fileInput {
+    margin: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #2898a7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1d80c6;
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
