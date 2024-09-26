@@ -13,13 +13,18 @@ const init = async () => {
 
 // Handle file input change
 const fileInput = document.getElementById('fileInput');
+const fileInputLabel = document.querySelector('label[for="fileInput"]'); // Get the label for the file input
+
 fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
 
     if (file) {
         const image = document.getElementById('image');
         image.src = URL.createObjectURL(file);
-        image.style.display = 'block';  // Show the image when loaded
+        image.style.display = 'block'; // Show the image when loaded
+
+        // Change the label text to the selected file name
+        fileInputLabel.textContent = file.name;
 
         image.onload = () => {
             imageLoaded = true;
@@ -30,18 +35,22 @@ fileInput.addEventListener('change', (event) => {
         image.onerror = () => {
             console.error("Failed to load the image. Please try again.");
             document.getElementById('detectButton').disabled = true; // Disable the detect button
+            image.style.display = 'none'; // Hide the image on error
         };
     } else {
         console.error("No file selected");
+        document.getElementById('detectButton').disabled = true; // Disable the detect button
     }
 });
 
 // Detect button functionality
 const detectButton = document.getElementById('detectButton');
-detectButton.addEventListener('click', () => {
+detectButton.addEventListener('click', async () => {
     if (imageLoaded) {
         const image = document.getElementById('image');
-        predict(image);
+        await predict(image);
+    } else {
+        console.warn("No image loaded for detection");
     }
 });
 
@@ -71,4 +80,5 @@ const showResult = (predictions) => {
     }
 };
 
-init(); // Initialize the model
+// Initialize the model
+init();
