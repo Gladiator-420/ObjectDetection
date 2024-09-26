@@ -12,33 +12,14 @@ body {
 
 h1 {
     font-size: 36px;
-    background: linear-gradient(270deg, #00aaff, #ab00a8, #00aaff);
+    background: linear-gradient(270deg, #00aaff, #0047ab, #00aaff);
     background-size: 300% 100%;
-    animation: moveGradient 10s ease-in-out infinite; /* Smoother transition with ease-in-out */
+    animation: moveGradient 10s ease-in-out infinite;
     
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-}
-
-@keyframes moveGradient {
-    0% {
-        background-position: 100% 0;
-    }
-    50% {
-        background-position: 0% 0;
-    }
-    100% {
-        background-position: 100% 0; /* Go back to starting point smoothly */
-    }
-}
-
-
-#fileInput {
-    margin: 20px;
-    padding: 10px;
-    font-size: 16px;
 }
 
 #image {
@@ -72,6 +53,34 @@ h1 {
 }
 
 .hidden {
-    display: none;
+    display: none; /* Hides the default file input */
 }
 
+/* Style the label as a button */
+label.button {
+    padding: 10px 20px;
+    background-color: #2898a7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+label.button:hover {
+    background-color: #1d80c6;
+}
+
+/* Keyframes for the smooth gradient animation on the heading */
+@keyframes moveGradient {
+    0% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0; /* Smoothly returns to starting point */
+    }
+}
