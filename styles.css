@@ -17,12 +17,12 @@ body {
 }
 #fileNameBox {
     color: rgb(9, 143, 78); /* Set the color of the file name */
-    font-family: 'Brush Script MT', cursive;
+    font-family: Paytone One;
 }
 
 h1 {
     font-family: Paytone One;
-    font-size: 36px;
+    font-size: 44px;
     background: linear-gradient(270deg, #00aaff, #b006f3, #00aaff);
     background-size: 300% 100%;
     animation: moveGradient 5s ease-in-out infinite;
@@ -40,15 +40,17 @@ h1 {
 }
 
 #image {
-    max-width: 50%; /* Limit the width to 50% of the parent element */
+    max-width: 40%; /* Limit the width to 50% of the parent element */
     height: auto; /* Maintain aspect ratio */
     margin: 20px auto; /* Center the image with auto margins */
     display: block; /* Make the image a block element to center it */
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Add shadow for depth */
+    border-radius: 10px; /* Optional: Add rounded corners for a smoother look */
 }
 
 
 #result {
-    font-family: 'Brush Script MT', cursive;
+    font-family: Paytone One;
     margin-top: 20px;
     font-size: 18px;
     color:rgb(2, 143, 75)
@@ -56,12 +58,12 @@ h1 {
 
 /* Button and Label button with smooth gradient animation */
 .button, label.button {
-    padding: 10px 20px;
+    padding: 14px 30px;
     background: linear-gradient(45deg, #00aaff, #056392, #2898a7); /* Gradient set to 45 degrees */    background-size: 300% 100%; /* 300% width for smooth transition */
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 27px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
     display: inline-block;
     border-radius: 20px;
@@ -109,5 +111,39 @@ h1 {
     }
     100% {
         background-position: 100% 0; /* Smoothly returns to starting point */
+    }
+}
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 37px; /* Reduce the font size for smaller screens */
+        padding: 12px 20px; /* Adjust padding */
+        border-radius: 8px; /* Optional: Adjust the border radius */
+    }
+
+    .button, label.button {
+        padding: 12px 20px; /* Reduce padding for smaller buttons */
+        font-size: 22px; /* Decrease font size */
+        border-radius: 15px; /* Adjust the border radius */
+    }
+
+    #image {
+        max-width: 80%; /* Reduce the width of the image to fit smaller screens */
+    }
+}       
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px; /* Reduce the font size for smaller screens */
+        padding: 10px 18px; /* Adjust padding */
+        border-radius: 8px; /* Optional: Adjust the border radius */
+    }
+
+    .button, label.button {
+        padding: 10px 18px; /* Reduce padding for smaller buttons */
+        font-size: 20px; /* Decrease font size */
+        border-radius: 15px; /* Adjust the border radius */
+    }
+
+    #image {
+        max-width: 80%; /* Reduce the width of the image to fit smaller screens */
     }
 }
